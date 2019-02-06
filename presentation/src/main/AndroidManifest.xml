@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.yai.hooq" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="io.yai.hooq.presentation.TMDb"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:name="io.yai.hooq.presentation.ui.activity.NowPlayingMoviesActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:name="io.yai.hooq.presentation.ui.activity.SearchMoviesActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="io.yai.hooq.presentation.ui.activity.MovieDetailActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.yai.hooq.presentation.ui.activity.NowPlayingMoviesActivity"/>
+        </activity>
+        <activity android:name="io.yai.hooq.presentation.ui.activity.MovieImagesActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_gallery">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.yai.hooq.presentation.ui.activity.MovieDetailActivity"/>
+        </activity>
+        <activity android:name="io.yai.hooq.presentation.ui.activity.ImageActivity"
+            android:screenOrientation="fullSensor">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.yai.hooq.presentation.ui.activity.MovieImagesActivity"/>
+        </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="dfefa327df420d24cccd64b46d71cc2438d3135e" />
+    </application>
+
+</manifest>
